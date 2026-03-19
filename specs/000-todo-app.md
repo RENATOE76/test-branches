@@ -28,3 +28,20 @@ Feature: Editar tarea
 
 Feature: Filtros
 - Botones: Todas / Pendientes / Completadas → muestra solo las que corresponden
+
+Feature: Editar tarea
+- Given tarea existente → doble click en el texto
+- When aparece input editable → escribo nuevo texto + Enter
+- Then tarea actualizada y guardada en localStorage
+
+Feature: Filtros
+- Botones: Todas / Pendientes / Completadas
+- When click en botón → muestra solo las tareas correspondientes
+
+Feature: Contador
+- Muestra siempre: "X pendientes de Y total"
+- Se actualiza automáticamente
+
+Feature: Limpiar completadas
+- Botón "Limpiar completadas"
+- When click → borra todas las tareas marcadas como completadas
