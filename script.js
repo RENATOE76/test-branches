@@ -23,6 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
         tasks[index].completed = checkbox.checked;
         saveTasks();
         renderTasks();
+        // Dentro del forEach, después de crear el text span:
+text.addEventListener('dblclick', () => {
+  const newText = prompt('Editar tarea:', task.text);
+  if (newText !== null && newText.trim() !== '') {
+    tasks[index].text = newText.trim();
+    saveTasks();
+    renderTasks();
+  }
+});
       });
 
       const text = document.createElement('span');
